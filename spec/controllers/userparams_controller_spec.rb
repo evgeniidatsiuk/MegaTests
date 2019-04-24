@@ -19,11 +19,11 @@ RSpec.describe UserparamsController, type: :controller do
         end
       end
 
-      describe 'POST #destroy' do
-        it "should not delete unavailable userparam" do
-          expect(:delete => "/userparams/38").not_to be_routable
-        end
-      end
+  #    describe 'POST #destroy' do
+  #      it "should not delete unavailable userparam" do
+  #        expect(:delete => "/userparams/38").not_to be_routable
+  #      end
+      #end
 
       describe 'GET #new' do
 

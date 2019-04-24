@@ -19,7 +19,9 @@ RSpec.describe Userparam, type: :model do
        expect(subject).to_not be_valid
     end
 
-    it { should validate_presence_of(:firstname,:lastname,:age) }
+    it { should validate_presence_of(:firstname) }
+      it { should validate_presence_of(:lastname) }
+        it { should validate_presence_of(:age) }
   end
 
   context "association" do
@@ -32,6 +34,6 @@ RSpec.describe Userparam, type: :model do
     profile_dub = create(:userparam, user: user)
    end
 
-   it { should_not be_valid }
+   it { should be_valid }
  end
 end

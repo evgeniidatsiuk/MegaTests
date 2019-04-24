@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample2</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <%= render "layouts/header" %>
+  <hr>
+
+  <% flash.each do |name, message| %>
+    <p><i><%= "#{name}: #{message}" %></i></p>
+  <% end %>
+  
+    <%= yield %>
+  <hr>
+  <%= render "layouts/footer" %>
+  </body>
+</html>

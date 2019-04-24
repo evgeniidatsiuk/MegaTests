@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <%= link_to "Back", root_path %> |
+  <% if current_user.userparam.nil? %>
+     <%= link_to "Profile", new_userparam_path %> |
+  <% else %>
+   <%= link_to "Profile", userparam_path(current_user.id) %> |
+  <% end %>
+
+  <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
+<% else %>
+   <%= link_to "Login", new_user_session_path %>
+<% end %>
